@@ -4,6 +4,8 @@ import shapefile
 import csv
 import os.path
 import os
+import shutil
+
 
 def readTable(tableName,tableField):
 	table = {}
@@ -42,6 +44,8 @@ def doJoin(shpName, shpField, tableName, tableField):
 
 	w._shapes.extend(r.shapes())
 	w.save(outputName)
+
+	shutil.copyfile( os.path.splitext(shpName)[0] + ".prj", outputName + ".prj" )
 
 	return outputName
 
