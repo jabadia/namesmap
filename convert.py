@@ -16,7 +16,7 @@ def convertSheet(sheet,year):
 			(code,provincia) = sheet.cell(titleRowIndex,colIndex).value.split(' - ')
 			varon = sheet.cell(maleNameRowIndex,colIndex).value
 			mujer = sheet.cell(femaleNameRowIndex,colIndex).value
-			writer.writerow([code,provincia.encode('utf-8'),varon.encode('utf-8'), mujer.encode('utf-8')])
+			writer.writerow([s.encode('utf-8') for s in [code,provincia,varon,mujer]])
 
 
 def main():
