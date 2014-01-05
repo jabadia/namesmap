@@ -2,19 +2,21 @@
 import xlrd
 import csv
 
-def doSheet(sheet,year):
+def convertSheet(sheet,year):
 	csvName = "d%04d.csv" % year
 	print sheet.name,"->", csvName;
 	with open( csvName, "w") as fp:
 		writer = csv.writer(fp,delimiter=';')
-		writer.writerow(["CODIGO","PROVINCIA","NOMBRE"])
+		writer.writerow(["CODIGO","PROVINCIA","VARON","MUJER"])
 
 		titleRowIndex = 3
-		firstNameRowIndex = 5
+		maleNameRowIndex = 5
+		femaleNameRowIndex = 29
 		for colIndex in range(1,sheet.ncols,3):
 			(code,provincia) = sheet.cell(titleRowIndex,colIndex).value.split(' - ')
-			name = sheet.cell(firstNameRowIndex,colIndex).value
-			writer.writerow([code,provincia.encode('utf-8'),name.encode('utf-8')])
+			varon = sheet.cell(maleNameRowIndex,colIndex).value
+			mujer = sheet.cell(femaleNameRowIndex,colIndex).value
+			writer.writerow([code,provincia.encode('utf-8'),varon.encode('utf-8'), mujer.encode('utf-8')])
 
 
 def main():
@@ -38,7 +40,7 @@ def main():
 
 	for (sheetName,year) in sheetNames:
 		sheet = book.sheet_by_name(sheetName);
-		doSheet(sheet,year);
+		convertSheet(sheet,year);
 
 
 
