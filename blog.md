@@ -54,13 +54,14 @@ Now we need to join our alphanumeric data with the geographic data somehow:
 
 * ArcGIS for Desktop:
 * QGIS: 
-* OGR2OGR ?
+* ogr2ogr ?
 * Excel
+* another python script
 
 #Step 2 - The Map
-In ArcGIS Online, I uploaded the provincias2010.zip file that contains all provincias2010.* (shp,shx,prj,dbf) files.
+In ArcGIS Online, I uploaded the provincias_names.zip file that contains all provincias_names.* (shp,shx,prj,dbf) files.
 
-I configured the layer pop-up (to show only the Provincia name in the title and the Male and Female most frequent names) and symbology (Unique Symbols on VARON (male) field).
+I configured the layer pop-up (to show only the Provincia name in the title and the Male and Female most frequent names for 2010) and symbology (Unique Symbols on VARON (male) field).
 
 Once I had the layer ready, I copied it and changed the field for the Unique Symbols renderer to MUJER (female) field.
 
@@ -71,3 +72,10 @@ Finally, I set the Gray Canvas basemap as the background layer.
 The result is a map with a gray basemap, and two feature layers, one for male names and other for female names.
 
 #Step 3 - The App
+Now we need to create a web application that includes the map that we just created, and some interaction:
+
+* add labels to provincias
+* easily switch between male and female names
+* easily compare between different decades
+* show a legend ?
+
