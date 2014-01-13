@@ -49,7 +49,7 @@ For each of the sheets, we extract the data (fortunately it's the same layout in
 				mujer = sheet.cell(femaleNameRowIndex,colIndex).value
 				writer.writerow([s.encode('utf-8') for s in [code,provincia,varon,mujer]])
 
-So far, we only have alphanumeric data. We need some geographic data to create a map. I searched in [www.comunidadsig.com](www.comunidadsig.com) and found a shapefile of the spanish Provincias in web mercator projection [Provincias- WGS84 Web Mercator](http://www.arcgis.com/home/item.html?id=d286b2d892384b84b2c44b06766380ef)
+So far, we only have alphanumeric data. We need some geographic data to create a map. I searched in [www.comunidadsig.com](http://www.comunidadsig.com) and found a shapefile of the spanish Provincias in web mercator projection [Provincias- WGS84 Web Mercator](http://www.arcgis.com/home/item.html?id=d286b2d892384b84b2c44b06766380ef)
 Now we need to join our alphanumeric data with the geographic data somehow:
 
 * ArcGIS for Desktop:
