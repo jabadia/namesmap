@@ -41,8 +41,8 @@ def doJoin(shpName, shpField, years, tableField):
 		joinValue = record[joinFieldIndex]
 		for year in years:
 			tableRecord = yearTables[year][joinValue]
-			varon = tableRecord['VARON']
-			mujer = tableRecord['MUJER']
+			varon = tableRecord['VARON'].title()
+			mujer = tableRecord['MUJER'].title()
 			record.append(varon)
 			record.append(mujer)
 		w.records.append(record)

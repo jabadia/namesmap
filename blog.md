@@ -78,4 +78,5 @@ Now we need to create a web application that includes the map that we just creat
 * easily switch between male and female names
 * easily compare between different decades
 * show a legend ?
+* show minimalistic pop-ups
 
